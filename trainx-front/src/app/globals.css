@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+/* globals.css */
+
+/* Variables de diseño (modo claro) */
+:root {
+  --background: #121212;
+  --foreground: #F5F5F5;
+  --card: #1a1a1a;
+  --card-foreground: #F5F5F5;
+  --primary: #FF6B00;
+  --secondary: #2a2a2a;
+  --muted: #2a2a2a;
+  --muted-foreground: #9ca3af;
+  --border: #2a2a2a;
+  --input: #2a2a2a;
+  --input-background: #1a1a1a;
+  --ring: #FF6B00;
+}
+
+/* Modo oscuro */
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --secondary: oklch(0.269 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: #9ca3af;
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --input-background: oklch(0.145 0 0);
+  --ring: oklch(0.439 0 0);
+}
+
+/* Aplicación de las variables al body y elementos base */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, sans-serif;
+}
+
+/* Tarjetas y contenedores */
+.card {
+  background-color: var(--card);
+  color: var(--card-foreground);
+  border: 1px solid var(--border);
+  border-radius: 0.625rem; /* 10px */
+}
+
+/* Botones */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--foreground);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* Textos */
+.text-primary {
+  color: var(--primary);
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+
+/* Inputs */
+input, textarea, select {
+  background-color: var(--input-background);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+.scrollbar-thin {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #888 #1a1a1a; /* Thumb y track */
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 3px;
+}

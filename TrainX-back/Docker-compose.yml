@@ -1,0 +1,31 @@
+services:
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.development
+    depends_on:
+      - db
+    networks:
+      - trainx-network
+
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin 
+      POSTGRES_DB: trainx_db
+    ports:
+      - "5432:5432" 
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - trainx-network
+
+networks:
+  trainx-network:
+    driver: bridge
+
+volumes:
+  postgres_data:

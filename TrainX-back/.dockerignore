@@ -1,0 +1,9 @@
+node_modules
+.env.production
+.env.development
+.git
+.gitignore
+dist
+logs
+*.log
+README.md
